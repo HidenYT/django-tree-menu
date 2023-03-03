@@ -10,6 +10,11 @@ class TreeMenu(models.Model):
 
 class TreeMenuItem(models.Model):
     public_name     = models.CharField(max_length=300)
+    # If you are not using reverse in your link, you should
+    # enter the page link relative to the website domain and 
+    # set reverse_link to False in admin.
+    # For example, if the destination page is https://abc.ru/1/2/
+    # then the link would be /1/2/
     link            = models.CharField(max_length=100, blank=True)
     reverse_link    = models.BooleanField(default=False)
     sort_priority   = models.IntegerField()
